@@ -15,7 +15,7 @@ public class Goblin extends Inimigo{
     public void fugir(){
 
     }
-    public void roubarIte(Personagem jogador){
+    public void roubarItem(Personagem jogador){
 
     }
     public void emboscar(Personagem alvo){

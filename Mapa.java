@@ -1,9 +1,17 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Mapa {
     private String nomeRegiao;
-    private java.util.List<String> listaDeLocais;
+    private List<String> listaDeLocais = new ArrayList<>();
+    public List<Inimigo> listarInimigos = new ArrayList<>();
 
-    public java.util.List<Inimigo> listarInimigos() {return null;}
-    public void spawnarInimigos(){
+    public List<Inimigo> listarInimigos(){
+        return List.of();
+
+    }
+    public void spawnarInimigos(Inimigo inimigo){
+        inimigo.add(inimigo);
 
     }
     public void alterarClima(){

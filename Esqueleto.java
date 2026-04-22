@@ -22,6 +22,7 @@ public class Esqueleto extends Inimigo{
 
     }
     public <Arma> void equiparArma(Arma arma){
+        this.armaEquipada = (String) arma;
 
     }
     public void perderMembro(){

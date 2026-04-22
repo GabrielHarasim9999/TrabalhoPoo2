@@ -13,6 +13,7 @@ public class NPC {
 
     }
     public void venderItem(Item item, Personagem jogador){
+        jogador.adicionarItem(item);
 
     }
 }

@@ -8,9 +8,13 @@ public class Cidade {
 
     }
     public void adiconarNPC(NPC npc) {
+        npcs.add(npc);
 
     }
     public void listarLojas(){
+        for (String loja: lojas){
+            System.out.println(loja);
+        }
 
     }
 }

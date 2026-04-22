@@ -1,4 +1,4 @@
-public class Item {
+public abstract class Item {
     private String nome;
     private int id;
     private String tipo;
@@ -12,4 +12,6 @@ public class Item {
     public void inspecionar(){
 
     }
+
+    public abstract void usar(Personagem alvo);
 }

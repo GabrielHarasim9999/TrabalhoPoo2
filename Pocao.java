@@ -3,8 +3,9 @@ public class Pocao extends Item{
     private int valorEfeito;
     private int duracao;
 
-    public void aplicarEfeito(Personagem alvo){
-
+    @Override
+    public void usar(Personagem alvo){
+        alvo.vida += valorEfeito;
     }
 
 }

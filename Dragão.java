@@ -8,7 +8,7 @@ public class Dragão extends Inimigo{
     public void voar(){
 
     }
-    public void soproElemental(){
+    public void soproElemental(Personagem alavo){
 
     }
 }

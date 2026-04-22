@@ -5,9 +5,11 @@ public class Missao {
     private String status;
 
     public void iniciar(){
+        status ="em andamento";
 
     }
     public void concluir(){
+        status="Concluída";
 
     }
 }

@@ -9,4 +9,9 @@ public class Armadura extends Item{
     public void reduzirDuarabilidade(){
 
     }
+
+    @Override
+    public void usar(Personagem alvo) {
+
+    }
 }
