@@ -1,8 +1,8 @@
-public class Arquiero extends Personagem {
+public class Arqueiro extends Personagem {
     private String agilidade;
     private int precisao;
 
-    public Arquiero(String nome, int id) {
+    public Arqueiro(String nome, int id) {
         super(nome, id);
     }
 
