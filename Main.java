@@ -36,4 +36,67 @@ class Personagem{
         inventario.add(item);
     }
 
+    public int getAtaque() {
+        return ataque;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getDefesa() {
+        return defesa;
+    }
+
+    public int getMana() {
+        return mana;
+    }
+
+    public int getNivel() {
+        return nivel;
+    }
+
+    public int getVida() {
+        return vida;
+    }
+
+    public String getInventario() {
+        return inventario;
+    }
+
+    public void setAtaque(int ataque) {
+        this.ataque = ataque;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setDefesa(int defesa) {
+        this.defesa = defesa;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setInventario(String inventario) {
+        this.inventario = inventario;
+    }
+
+    public void setMana(int mana) {
+        this.mana = mana;
+    }
+
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
 }

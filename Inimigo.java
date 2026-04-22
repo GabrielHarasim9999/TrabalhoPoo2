@@ -19,4 +19,52 @@ public class Inimigo {
     public void add(Inimigo inimigo) {
 
     }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setDefesa(int defesa) {
+        this.defesa = defesa;
+    }
+
+    public void setAtaque(int ataque) {
+        this.ataque = ataque;
+    }
+
+    public int getVida() {
+        return vida;
+    }
+
+    public int getDefesa() {
+        return defesa;
+    }
+
+    public int getAtaque() {
+        return ataque;
+    }
+
+    public int getRecompensaXP() {
+        return recompensaXP;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setRecompensaXP(int recompensaXP) {
+        this.recompensaXP = recompensaXP;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
 }

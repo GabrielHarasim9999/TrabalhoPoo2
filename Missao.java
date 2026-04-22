@@ -12,5 +12,38 @@ public class Missao {
         status="Concluída";
 
     }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public String getRecompensa() {
+        return recompensa;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public void setRecompensa(String recompensa) {
+        this.recompensa = recompensa;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
 }
 

@@ -14,8 +14,33 @@ public class Mapa {
         inimigo.add(inimigo);
 
     }
-    public void alterarClima(){
+    public void alterarClima() {
 
     }
+
+    public List<Inimigo> getListarInimigos() {
+        return listarInimigos;
+    }
+
+    public List<String> getListaDeLocais() {
+        return listaDeLocais;
+    }
+
+    public String getNomeRegiao() {
+        return nomeRegiao;
+    }
+
+    public void setListaDeLocais(List<String> listaDeLocais) {
+        this.listaDeLocais = listaDeLocais;
+    }
+
+    public void setListarInimigos(List<Inimigo> listarInimigos) {
+        this.listarInimigos = listarInimigos;
+    }
+
+    public void setNomeRegiao(String nomeRegiao) {
+        this.nomeRegiao = nomeRegiao;
+    }
+
 }
 

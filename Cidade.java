@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Cidade {
     private String nome;
     private int populacao;
@@ -15,6 +17,37 @@ public class Cidade {
         for (String loja: lojas){
             System.out.println(loja);
         }
+    }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public int getPopulacao() {
+        return populacao;
+    }
+
+    public List<NPC> getNpcs() {
+        return npcs;
+    }
+
+    public List<String> getLojas() {
+        return lojas;
+    }
+
+    public void setLojas(List<String> lojas) {
+        this.lojas = lojas;
+    }
+
+    public void setNpcs(List<NPC> npcs) {
+        this.npcs = npcs;
+    }
+
+    public void setPopulacao(int populacao) {
+        this.populacao = populacao;
     }
 }
