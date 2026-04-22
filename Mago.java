@@ -11,4 +11,3 @@ public class Mago  extends Personagem{
 
     }
 }
-public

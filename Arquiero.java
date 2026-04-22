@@ -11,4 +11,3 @@ public class Arquiero extends Personagem {
 
     }
 }
-public

@@ -31,4 +31,3 @@ public class Goblin extends Inimigo{
 
     }
 }
-
