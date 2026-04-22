@@ -9,3 +9,4 @@ public class Arma  extends Item{
         return dano;
     }
 }
+public

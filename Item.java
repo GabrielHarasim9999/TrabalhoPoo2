@@ -15,3 +15,4 @@ public abstract class Item {
 
     public abstract void usar(Personagem alvo);
 }
+public
