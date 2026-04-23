@@ -1,9 +1,11 @@
+import java.util.ArrayList;
+
 public class Arqueiro extends Personagem {
     private String agilidade;
     private int precisao;
 
-    public Arqueiro(String nome, int id) {
-        super(nome, id);
+    public Arqueiro(String nome, String tipoUsuario, String classe, int id, int nivel, int mana, int ataque, int defesa, ArrayList inventario, String agilidade, int Precisao) {
+        super(String nome,String tipoUsuario, String classe,int id, int nivel, int vida, int mana);
     }
 
     public void tiroPreciso(Inimigo alvo){
@@ -14,6 +16,26 @@ public class Arqueiro extends Personagem {
     @Override
     public int getAtaque() {
         return super.getAtaque();
+    }
+
+    @Override
+    public String getClasse() {
+        return super.getClasse();
+    }
+
+    @Override
+    public void setClasse(String classe) {
+        super.setClasse(classe);
+    }
+
+    @Override
+    public void setAtaque(int ataque) {
+        super.setAtaque(ataque);
+    }
+
+    @Override
+    public void setInventario(ArrayList inventario) {
+        super.setInventario(inventario);
     }
 
     @Override
@@ -47,7 +69,7 @@ public class Arqueiro extends Personagem {
     }
 
     @Override
-    public String getInventario() {
+    public ArrayList getInventario() {
         return super.getInventario();
     }
 
@@ -55,4 +77,66 @@ public class Arqueiro extends Personagem {
     public String getNome() {
         return super.getNome();
     }
+
+    @Override
+    public void setDefesa(int defesa) {
+        super.setDefesa(defesa);
+    }
+
+    @Override
+    public void setId(int id) {
+        super.setId(id);
+    }
+
+    @Override
+    public void setMana(int mana) {
+        super.setMana(mana);
+    }
+
+    @Override
+    public void receberDano(int dano) {
+        super.receberDano(dano);
+    }
+
+    public String getAgilidade() {
+        return agilidade;
+    }
+
+    @Override
+    public void setNivel(int nivel) {
+        super.setNivel(nivel);
+    }
+
+    public void setPrecisao(int precisao) {
+        this.precisao = precisao;
+    }
+
+    @Override
+    public void setNome(String nome) {
+        super.setNome(nome);
+    }
+
+    @Override
+    public void setVida(int vida) {
+        super.setVida(vida);
+    }
+
+    @Override
+    public void usarHabilidade() {
+        super.usarHabilidade();
+    }
+
+    public int getPrecisao() {
+        return precisao;
+    }
+
+    public void setAgilidade(String agilidade) {
+        this.agilidade = agilidade;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }
+

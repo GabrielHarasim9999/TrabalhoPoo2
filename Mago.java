@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Mago  extends Personagem{
     private int mana;
     private int poderMagico;
@@ -22,8 +24,13 @@ public class Mago  extends Personagem{
     }
 
     @Override
-    public void setInventario(String inventario) {
+    public void setInventario(ArrayList inventario) {
         super.setInventario(inventario);
+    }
+
+    @Override
+    public String getClasse() {
+        return super.getClasse();
     }
 
     @Override
@@ -47,7 +54,7 @@ public class Mago  extends Personagem{
     }
 
     @Override
-    public String getInventario() {
+    public ArrayList getInventario() {
         return super.getInventario();
     }
 

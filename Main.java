@@ -1,102 +1,52 @@
-import java.util.*;
 
-class Personagem{
-    private String nome;
-    private int id;
-    private int nivel;
-    protected int vida;
-    private int mana;
-    protected int ataque;
-    protected int defesa;
-    private String inventario;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
-    public Personagem(String nome, int id){
-        this.nome = nome;
-        this.id = id;
-        this.nivel = 1;
-    }
+public class Main {
 
+    private static final Scanner sc = new Scanner(System.in);
+    private static final List<Personagem> PERSONAGENS = new ArrayList<>();
 
+    private static int idCliente = 1;
 
-    public void atacar(Inimigo inimigo){
-        inimigo.receberDano(this.ataque);
+    public static void main(String[] args) {
 
-    }
-    public void defender(){
+        System.out.println("=========== Nomeie o Personagem ===========");
 
-    }
-    public void usarHabilidade(){
+        System.out.print("Digite o nome do Personagem: ");
+        String nome = sc.nextLine();
 
-    }
-    public void receberDano(int dano){
-        this.vida -=Math.max(0, dano - defesa);
+        System.out.print("Escolha a classe dele: ");
+        String classe = sc.nextLine();
 
-    }
-    public void adicionarItem(Item item){
-        inventario.add(item);
-    }
+        System.out.print("Escolha a arma dele: ");
+        String arma = sc.nextLine();
 
-    public int getAtaque() {
-        return ataque;
-    }
+        System.out.print("Digite o tipo do usuário: ");
+        String tipoUsuario = sc.nextLine();
 
-    public int getId() {
-        return id;
-    }
+        System.out.println("Jogador entrou!");
 
-    public int getDefesa() {
-        return defesa;
-    }
+        // Criando inventário vazio
+        ArrayList<Item> inventario = new ArrayList<>();
 
-    public int getMana() {
-        return mana;
-    }
+        // Criando personagem (ajuste conforme seu construtor real)
+        Personagem personagem1 = new Personagem(nome,
+                tipoUsuario,
+                classe,
+                idCliente++,
+                1,      // nível
+                100,    // vida
+                50,     // mana
+                10,     // ataque
+                5,      // defesa
+                inventario
+        );
 
-    public int getNivel() {
-        return nivel;
-    }
+        PERSONAGENS.add(personagem1);
 
-    public int getVida() {
-        return vida;
-    }
-
-    public String getInventario() {
-        return inventario;
-    }
-
-    public void setAtaque(int ataque) {
-        this.ataque = ataque;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setDefesa(int defesa) {
-        this.defesa = defesa;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setInventario(String inventario) {
-        this.inventario = inventario;
-    }
-
-    public void setMana(int mana) {
-        this.mana = mana;
-    }
-
-    public void setNivel(int nivel) {
-        this.nivel = nivel;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public void setVida(int vida) {
-        this.vida = vida;
+        System.out.println("Jogador " + nome + " criado com sucesso!");
     }
 }
+

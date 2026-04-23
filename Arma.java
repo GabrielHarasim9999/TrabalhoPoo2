@@ -1,6 +1,13 @@
 public class Arma  extends Item{
     private int dano;
+    private String nome;
     private int durabilidade;
+
+    public Arma(String nome, int dano, int durabilidade){
+        this.nome = nome;
+        this.dano = dano;
+        this.durabilidade = durabilidade;
+    }
 
     @Override
     public void usar(Personagem alvo){
@@ -95,4 +102,8 @@ public class Arma  extends Item{
         super.usar();
     }
 
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

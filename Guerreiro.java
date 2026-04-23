@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Guerreiro extends Personagem{
     private int forca;
     private int resistencia;
@@ -12,7 +14,7 @@ public class Guerreiro extends Personagem{
     }
 
     @Override
-    public String getInventario() {
+    public ArrayList getInventario() {
         return super.getInventario();
     }
 
@@ -72,8 +74,13 @@ public class Guerreiro extends Personagem{
     }
 
     @Override
-    public void setInventario(String inventario) {
+    public void setInventario(ArrayList inventario) {
         super.setInventario(inventario);
+    }
+
+    @Override
+    public String getClasse() {
+        return super.getClasse();
     }
 
     @Override
