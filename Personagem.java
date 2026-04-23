@@ -128,4 +128,5 @@ public class Personagem {
     public void setVida(int vida) {
         this.vida = vida;
     }
+
 }

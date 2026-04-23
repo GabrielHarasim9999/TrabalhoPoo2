@@ -1,17 +1,35 @@
 import java.util.ArrayList;
 
 public class Mago  extends Personagem{
+    private static final int nivel =  2;
     private int mana;
     private int poderMagico;
 
-    public Mago(String nome, int id) {
-        super(nome, id);
+    public Mago(String nome, String tipoUsuario, String classe,int id, int vida, int mana, int ataque, int defesa, ArrayList inventario, int poderMagico) {
+        super(nome, tipoUsuario, classe, id, nivel, vida, mana, ataque, defesa,inventario);
+        this.poderMagico=poderMagico;
     }
 
     public void lancarFeitico(Inimigo alvo){
         alvo.receberDano(poderMagico);
 
     }
+
+    @Override
+    public String getTipoUsuario() {
+        return super.getTipoUsuario();
+    }
+
+    @Override
+    public void setTipoUsuario(String tipoUsuario) {
+        super.setTipoUsuario(tipoUsuario);
+    }
+
+    @Override
+    public void setClasse(String classe) {
+        super.setClasse(classe);
+    }
+
 
     @Override
     public void usarHabilidade() {

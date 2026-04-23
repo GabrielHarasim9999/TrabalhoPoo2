@@ -4,8 +4,11 @@ public class Arqueiro extends Personagem {
     private String agilidade;
     private int precisao;
 
-    public Arqueiro(String nome, String tipoUsuario, String classe, int id, int nivel, int mana, int ataque, int defesa, ArrayList inventario, String agilidade, int Precisao) {
-        super(String nome,String tipoUsuario, String classe,int id, int nivel, int vida, int mana);
+    public Arqueiro(String nome, String tipoUsuario, String classe, int id, int nivel, int vida,int mana, int ataque, int defesa, ArrayList inventario, String agilidade, int Precisao) {
+        super(nome,tipoUsuario,classe,id,nivel,mana,ataque,vida,defesa,inventario);
+        this.agilidade = agilidade;
+        this.precisao = precisao;
+
     }
 
     public void tiroPreciso(Inimigo alvo){
@@ -32,6 +35,7 @@ public class Arqueiro extends Personagem {
     public void setAtaque(int ataque) {
         super.setAtaque(ataque);
     }
+
 
     @Override
     public void setInventario(ArrayList inventario) {
@@ -137,6 +141,26 @@ public class Arqueiro extends Personagem {
     @Override
     public String toString() {
         return super.toString();
+    }
+
+    @Override
+    public String getTipoUsuario() {
+        return super.getTipoUsuario();
+    }
+
+    @Override
+    public void setTipoUsuario(String tipoUsuario) {
+        super.setTipoUsuario(tipoUsuario);
+    }
+
+    @Override
+    public void defender() {
+        super.defender();
+    }
+
+    @Override
+    public void atacar(Inimigo inimigo) {
+        super.atacar(inimigo);
     }
 }
 

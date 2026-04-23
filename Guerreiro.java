@@ -4,8 +4,10 @@ public class Guerreiro extends Personagem{
     private int forca;
     private int resistencia;
 
-    public Guerreiro(String nome, int id) {
-        super(nome, id);
+    public Guerreiro(String nome, String tipoUsuario, String classe, int id, int nivel, int vida, int mana, int ataque, int defesa, ArrayList inventario, int forca, int resistencia) {
+        super(nome, tipoUsuario, classe, id, nivel, vida, mana, ataque, defesa, inventario);
+        this.forca= forca;
+        this.resistencia= resistencia;
     }
 
     public void ataquePesado(Inimigo alvo){
@@ -16,6 +18,21 @@ public class Guerreiro extends Personagem{
     @Override
     public ArrayList getInventario() {
         return super.getInventario();
+    }
+
+    @Override
+    public String getTipoUsuario() {
+        return super.getTipoUsuario();
+    }
+
+    @Override
+    public void setTipoUsuario(String tipoUsuario) {
+        super.setTipoUsuario(tipoUsuario);
+    }
+
+    @Override
+    public void setClasse(String classe) {
+        super.setClasse(classe);
     }
 
     @Override
