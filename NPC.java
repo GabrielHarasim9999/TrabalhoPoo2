@@ -1,7 +1,11 @@
 public class NPC {
+    private int id;
     private String dialogo;
     private String tipo;
     private String nome;
+
+    public NPC(int idNPC, String dialogo, String nome, String tipo) {
+    }
 
     public void conversar() {
 

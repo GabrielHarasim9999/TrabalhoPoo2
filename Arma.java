@@ -1,4 +1,5 @@
 public class Arma  extends Item{
+    public int idArma;
     private int dano;
     private String nome;
     private int durabilidade;
@@ -7,6 +8,18 @@ public class Arma  extends Item{
         this.nome = nome;
         this.dano = dano;
         this.durabilidade = durabilidade;
+    }
+
+    public Arma(int idArma, int dano, String nome, int durabilidade) {
+        super();
+    }
+
+    public int getIdArma() {
+        return idArma;
+    }
+
+    public void setIdArma(int idArma) {
+        this.idArma = idArma;
     }
 
     @Override

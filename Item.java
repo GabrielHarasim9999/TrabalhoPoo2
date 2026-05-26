@@ -1,10 +1,14 @@
-public abstract class Item {
+public class Item {
+    private int idItem;
     private String nome;
     private int id;
     private String tipo;
     private int valor;
     private int peso;
     private String raridade;
+
+    public Item(int idItem, String nome, String tipo, int valor, int peso, String raridade) {
+    }
 
     public void usar(){
 
@@ -15,6 +19,14 @@ public abstract class Item {
 
     public void usar(Personagem alvo){
 
+    }
+
+    public int getIdItem() {
+        return idItem;
+    }
+
+    public void setIdItem(int idItem) {
+        this.idItem = idItem;
     }
 
     public void setTipo(String tipo) {

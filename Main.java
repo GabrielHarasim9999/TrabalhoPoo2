@@ -105,7 +105,7 @@ public class Main {
                     break;
 
                 case 5:
-                    cadastratItem();
+                    cadastrarItem();
                     break;
 
                 case 6:
@@ -157,6 +157,79 @@ public class Main {
         PERSONAGENS.add(personagem);
         System.out.println("O personagem foi cadastrado: " + personagem.toString());
         }
+
+        public static void cadastrarOTipoDeArma() {
+        System.out.println("Digite o nome da arma:");
+        String nome = sc.nextLine();
+        System.out.println("Digite o dano da arma:");
+        int dano = Integer.parseInt(sc.nextLine());
+        System.out.println("Digite a durabilidade da arma");
+        int durabilidade = Integer.parseInt(sc.nextLine());
+
+        int idArma = ARMAS.size() + 1;
+        Arma arma = new Arma(idArma,dano,nome,durabilidade);
+        ARMAS.add(arma);
+        System.out.println("A arma foi cadastrado: " + arma.toString());
+        }
+
+        public static void cadastrarOTipoDeArmadura() {
+        System.out.println("Digite o nome da armadura:");
+        String nomeArmadura = sc.nextLine();
+        System.out.println("Digite a defesa da armadura:");
+        int defesa = Integer.parseInt(sc.nextLine());
+        System.out.println("Digite a durabilidade da armadura:");
+        int durabilidade = Integer.parseInt(sc.nextLine());
+        System.out.println("Digite o tipo de armadura:");
+        String tipoArmadura = sc.nextLine();
+
+        int idArmadura = ARMADURAS.size() + 1;
+        Armadura armadura= new Armadura(idArmadura,defesa,nomeArmadura,tipoArmadura, durabilidade);
+        ARMADURAS.add(armadura);
+        }
+        public static void cadastrarOTipoDeMissao() {
+        System.out.println("Digite o título da missão");
+        String titulo = sc.nextLine();
+        System.out.println("Digite a descrição da missão");
+        String descricao = sc.nextLine();
+        System.out.println("Digite a recompensa da missão");
+        String recompensa = sc.nextLine();
+        System.out.println("Digite o status da missão");
+        String status = sc.nextLine();
+
+        }
+
+        public static void cadastrarItem() {
+        System.out.println("Digite o nome do item:");
+        String nome = sc.nextLine();
+        System.out.println("Digite o tipo de item:");
+        String tipo = sc.nextLine();
+        System.out.println("Digite o valor do item:");
+        int valor = Integer.parseInt(sc.nextLine());
+        System.out.println("Digite o peso do item:");
+        int peso = Integer.parseInt(sc.nextLine());
+        System.out.println("Digite a raridade do item:");
+        String raridade = sc.nextLine();
+
+        int idItem = ITEMS.size() + 1;
+        Item item = new Item(idItem,nome, tipo, valor, peso, raridade);
+        ITEMS.add(item);
+
+        }
+
+        public static void cadastrarTipoNPC(){
+        System.out.println("Digite o dialogo da npc:");
+        String dialogo = sc.nextLine();
+        System.out.println("Digite o nome do NPC");
+        String nome = sc.nextLine();
+        System.out.println("Digite o tipo de npc:");
+        String tipo = sc.nextLine();
+
+        int idNPC = NPCS.size() + 1;
+        NPC npc = new NPC(idNPC, dialogo, nome, tipo);
+        NPCS.add(npc);
+
+        }
+
         //System.out.println("=========== Nomeie o Personagem ===========");
 
         //System.out.print("Digite o nome do Personagem: ");

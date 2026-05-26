@@ -2,6 +2,11 @@ public class Pocao extends Item{
     private String tipoEfeito;
     private int valorEfeito;
     private int duracao;
+
+    public Pocao(int idItem, String nome, String tipo, int valor, int peso, String raridade) {
+        super(idItem, nome, tipo, valor, peso, raridade);
+    }
+
     @Override
     public void usar(Personagem alvo){
         alvo.vida += valorEfeito;

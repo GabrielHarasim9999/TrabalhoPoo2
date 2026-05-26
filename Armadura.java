@@ -1,7 +1,13 @@
 public class Armadura extends Item{
+    public int idArmadura;
     private String defesa;
+    public String nomeArmadura;
     private String tipoArmadura;
     private String durabilidade;
+
+    public Armadura(int defesa, int i, String nomeArmadura, String tipoArmadura, int durabilidade) {
+        super();
+    }
 
     public void reduzirDano(){
 
@@ -13,6 +19,22 @@ public class Armadura extends Item{
     @Override
     public void usar(Personagem alvo) {
 
+    }
+
+    public String getNomeArmadura() {
+        return nomeArmadura;
+    }
+
+    public int getIdArmadura() {
+        return idArmadura;
+    }
+
+    public void setIdArmadura(int idArmadura) {
+        this.idArmadura = idArmadura;
+    }
+
+    public void setNomeArmadura(String nomeArmadura) {
+        this.nomeArmadura = nomeArmadura;
     }
 
     @Override
