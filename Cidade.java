@@ -6,6 +6,9 @@ public class Cidade {
     private java.util.List<NPC> npcs;
     private java.util.List<String> lojas;
 
+    public Cidade(int idCidade, String nome, String reino, int populacao) {
+    }
+
     public void acessarLojas(String nome) {
 
     }

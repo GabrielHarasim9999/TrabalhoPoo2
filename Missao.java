@@ -4,6 +4,9 @@ public class Missao {
     private String recompensa;
     private String status;
 
+    public Missao(int idMissao, String titulo, String descricao, String recompensa, String status) {
+    }
+
     public void iniciar(){
         status ="em andamento";
 

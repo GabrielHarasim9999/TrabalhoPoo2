@@ -83,6 +83,11 @@ public class Main {
             System.out.println("4- Escolha a missão");
             System.out.println("5- Escolha o item");
             System.out.println("6- Escolha o tipo de npc");
+            System.out.println("7- Cadastrar inimigo");
+            System.out.println("8- Cadastrar cidade");
+            System.out.println("9- Cadastrar dragão");
+            System.out.println("10- Cadastrar esqueleto");
+            System.out.println("11- Cadastrar poção");
 
 
             int escolha = Integer.parseInt(sc.nextLine());
@@ -110,6 +115,25 @@ public class Main {
 
                 case 6:
                     cadastrarTipoNPC();
+                    break;
+                case 7:
+                    cadastrarInimigo();
+                    break;
+
+                case 8:
+                    cadastrarCidade();
+                    break;
+
+                case 9:
+                    cadastrarDragao();
+                    break;
+
+                case 10:
+                    cadastrarEsqueleto();
+                    break;
+
+                case 11:
+                    cadastrarPocao();
                     break;
 
                 default:
@@ -262,6 +286,158 @@ public class Main {
 
             }
         }
+    }
+    public static void carregarJogoSalvo(){
+        boolean carregar = true;
+        System.out.println("Você deseja carregar um jogo salvo?(Sim/Não");
+        String resposta =sc.nextLine();
+        if (resposta.equalsIgnoreCase("Sim")) {
+            System.out.println("Carregando um jogo salvo...");
+        }else{
+        if (resposta.equalsIgnoreCase("Não")) {
+            System.out.println("Tá bom...");
+        }else{
+            System.out.println("Opção inválida");
+            }
+
+        }
+
+    }
+    public static void salvarJogo(){
+        boolean salvar = true;
+        System.out.println("Você deseja salvar o jogo?(Sim/Não)");
+        String resposta =sc.nextLine();
+        if (resposta.equalsIgnoreCase("Sim")) {
+            System.out.println("Salvando o jogo...");
+        }else{
+            if (resposta.equalsIgnoreCase("Não")) {
+            }else{
+                System.out.println("Opção inválida");
+            }
+        }
+    }
+    public static void cadastrarInimigo() {
+
+        System.out.println("Digite o nome do inimigo:");
+        String nome = sc.nextLine();
+
+        System.out.println("Digite o nível do inimigo:");
+        int nivel = Integer.parseInt(sc.nextLine());
+
+        System.out.println("Digite a vida do inimigo:");
+        int vida = Integer.parseInt(sc.nextLine());
+
+        System.out.println("Digite o ataque do inimigo:");
+        int ataque = Integer.parseInt(sc.nextLine());
+
+        int idInimigo = INIMIGOS.size() + 1;
+
+        Inimigo inimigo = new Inimigo(idInimigo, nome, nivel, vida);
+
+        INIMIGOS.add(inimigo);
+
+        System.out.println("O inimigo foi cadastrado: " + inimigo.toString());
+    }
+    public static void cadastrarCidade() {
+
+        System.out.println("Digite o nome da cidade:");
+        String nome = sc.nextLine();
+
+        System.out.println("Digite o reino da cidade:");
+        String reino = sc.nextLine();
+
+        System.out.println("Digite a população da cidade:");
+        int populacao = Integer.parseInt(sc.nextLine());
+
+        int idCidade = CIDADES.size() + 1;
+
+        Cidade cidade = new Cidade(idCidade, nome, reino, populacao);
+
+        CIDADES.add(cidade);
+
+        System.out.println("A cidade foi cadastrada: " + cidade.toString());
+    }
+    public static void cadastrarDragao() {
+
+        System.out.println("Digite o nome do dragão:");
+        String nome = sc.nextLine();
+
+        System.out.println("Digite o elemento do dragão:");
+        String elemento = sc.nextLine();
+
+        System.out.println("Digite a vida do dragão:");
+        int vida = Integer.parseInt(sc.nextLine());
+
+        System.out.println("Digite o ataque do dragão:");
+        int ataque = Integer.parseInt(sc.nextLine());
+
+        int idDragao = DRAGÃOS.size() + 1;
+
+        Dragão dragao = new Dragão(idDragao, nome, elemento, vida, ataque);
+
+        DRAGÃOS.add(dragao);
+
+        System.out.println("O dragão foi cadastrado: " + dragao.toString());
+    }
+    public static void cadastrarEsqueleto() {
+
+        System.out.println("Digite o nome do esqueleto:");
+        String nome = sc.nextLine();
+
+        System.out.println("Digite a vida do esqueleto:");
+        int vida = Integer.parseInt(sc.nextLine());
+
+        System.out.println("Digite o ataque do esqueleto:");
+        int ataque = Integer.parseInt(sc.nextLine());
+
+        int idEsqueleto = ESQUELETOS.size() + 1;
+
+        Esqueleto esqueleto = new Esqueleto(idEsqueleto, nome, vida, ataque);
+
+        ESQUELETOS.add(esqueleto);
+
+        System.out.println("O esqueleto foi cadastrado: " + esqueleto.toString());
+    }
+    public static void cadastrarMissao() {
+
+        System.out.println("Digite o título da missão:");
+        String titulo = sc.nextLine();
+
+        System.out.println("Digite a descrição da missão:");
+        String descricao = sc.nextLine();
+
+        System.out.println("Digite a recompensa da missão:");
+        String recompensa = sc.nextLine();
+
+        System.out.println("Digite o status da missão:");
+        String status = sc.nextLine();
+
+        int idMissao = MISSAOS.size() + 1;
+
+        Missao missao = new Missao(idMissao, titulo, descricao, recompensa, status);
+
+        MISSAOS.add(missao);
+
+        System.out.println("A missão foi cadastrada: " + missao.toString());
+    }
+    public static void cadastrarPocao() {
+
+        System.out.println("Digite o nome da poção:");
+        String nome = sc.nextLine();
+
+        System.out.println("Digite o efeito da poção:");
+        String efeito = sc.nextLine();
+
+        System.out.println("Digite o valor da poção:");
+        int valor = Integer.parseInt(sc.nextLine());
+
+        int idPocao = POCS.size() + 1;
+
+        Pocao pocao = new Pocao(idPocao, nome, efeito, valor);
+
+        POCS.add(pocao);
+
+        System.out.println("A poção foi cadastrada: " + pocao.toString());
     }
 }
 

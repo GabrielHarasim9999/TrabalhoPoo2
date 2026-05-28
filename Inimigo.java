@@ -6,6 +6,9 @@ public class Inimigo {
     private int recompensaXP;
     private int defesa;
 
+    public Inimigo(int idInimigo, String nome, int nivel, int vida) {
+    }
+
     public void atacarJogador(Personagem jogador){
         jogador.receberDano(ataque);
 

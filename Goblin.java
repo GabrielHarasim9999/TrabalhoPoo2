@@ -6,6 +6,10 @@ public class Goblin extends Inimigo{
     private int chanceFuga;
     private boolean rouboAtivo;
 
+    public Goblin(int idInimigo, String nome, int nivel, int vida) {
+        super(idInimigo, nome, nivel, vida);
+    }
+
     public void atacarJogador(Personagem jogador){
 
     }

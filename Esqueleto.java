@@ -6,6 +6,10 @@ public class Esqueleto extends Inimigo{
     private boolean reanimavel;
     private int tempoParaReanimar;
 
+    public Esqueleto(int idEsqueleto, String nome, int vida, int ataque) {
+        super(idEsqueleto, nome,vida, ataque);
+    }
+
     public void atacarJogador(Personagem jogador){
 
     }

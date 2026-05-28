@@ -10,6 +10,9 @@ public class Item {
     public Item(int idItem, String nome, String tipo, int valor, int peso, String raridade) {
     }
 
+    public Item(int idPocao, String nome, String efeito, int valor) {
+    }
+
     public void usar(){
 
     }

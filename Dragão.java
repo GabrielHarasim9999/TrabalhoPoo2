@@ -2,6 +2,10 @@ public class Dragão extends Inimigo{
     private String tipoElemento;
     private int alcanceVoo;
 
+    public Dragão(int idDragao, String nome, String elemento, int vida, int ataque) {
+        super(idDragao, nome, Integer.parseInt(elemento), vida);
+    }
+
     public void ataqueEmArea(){
 
     }
