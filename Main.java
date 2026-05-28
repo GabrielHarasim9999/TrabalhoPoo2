@@ -46,7 +46,7 @@ public class Main {
                     break;
 
                 case 2:
-                    comecarNovo();
+                    comecarNovoJogo();
                     break;
 
                 case 3:
@@ -122,7 +122,7 @@ public class Main {
 
     }
 
-        public static void cadastrarOPersonagem() {
+    public static void cadastrarOPersonagem() {
 
         System.out.println("Digite o nome do personagem: ");
         String nome = sc.nextLine();
@@ -156,9 +156,8 @@ public class Main {
         Personagem personagem = new Personagem(nome,tipoUsuario,classe,idPersonagem,nivel,vida,mana,ataque,defesa,inventario);
         PERSONAGENS.add(personagem);
         System.out.println("O personagem foi cadastrado: " + personagem.toString());
-        }
-
-        public static void cadastrarOTipoDeArma() {
+    }
+    public static void cadastrarOTipoDeArma() {
         System.out.println("Digite o nome da arma:");
         String nome = sc.nextLine();
         System.out.println("Digite o dano da arma:");
@@ -170,9 +169,9 @@ public class Main {
         Arma arma = new Arma(idArma,dano,nome,durabilidade);
         ARMAS.add(arma);
         System.out.println("A arma foi cadastrado: " + arma.toString());
-        }
+    }
 
-        public static void cadastrarOTipoDeArmadura() {
+    public static void cadastrarOTipoDeArmadura() {
         System.out.println("Digite o nome da armadura:");
         String nomeArmadura = sc.nextLine();
         System.out.println("Digite a defesa da armadura:");
@@ -185,8 +184,8 @@ public class Main {
         int idArmadura = ARMADURAS.size() + 1;
         Armadura armadura= new Armadura(idArmadura,defesa,nomeArmadura,tipoArmadura, durabilidade);
         ARMADURAS.add(armadura);
-        }
-        public static void cadastrarOTipoDeMissao() {
+    }
+    public static void cadastrarOTipoDeMissao() {
         System.out.println("Digite o título da missão");
         String titulo = sc.nextLine();
         System.out.println("Digite a descrição da missão");
@@ -196,9 +195,9 @@ public class Main {
         System.out.println("Digite o status da missão");
         String status = sc.nextLine();
 
-        }
+    }
 
-        public static void cadastrarItem() {
+    public static void cadastrarItem() {
         System.out.println("Digite o nome do item:");
         String nome = sc.nextLine();
         System.out.println("Digite o tipo de item:");
@@ -214,9 +213,9 @@ public class Main {
         Item item = new Item(idItem,nome, tipo, valor, peso, raridade);
         ITEMS.add(item);
 
-        }
+    }
 
-        public static void cadastrarTipoNPC(){
+    public static void cadastrarTipoNPC(){
         System.out.println("Digite o dialogo da npc:");
         String dialogo = sc.nextLine();
         System.out.println("Digite o nome do NPC");
@@ -228,43 +227,44 @@ public class Main {
         NPC npc = new NPC(idNPC, dialogo, nome, tipo);
         NPCS.add(npc);
 
+    }
+
+    public static void Continuar() {
+        boolean continuar = true;
+        while (continuar) {
+            System.out.println("\n----------------");
+            System.out.println("Você quer continuar o jogo? (Sim/Não)");
+            String resposta = sc.nextLine();
+
+            if (resposta.equalsIgnoreCase("sim")) {
+                System.out.println("Continuando o jogo de onde parou");
+            } else {
+                if (resposta.equalsIgnoreCase("não")) {
+                    System.out.println("Saindo do jogo");
+                } else {
+                    System.out.println("Resposta inválida");
+                }
+            }
         }
+    }
 
-        //System.out.println("=========== Nomeie o Personagem ===========");
+    public static void comecarNovoJogo(){
+        boolean comecar = true;
+        System.out.println("Você deseja começar um novo jogo?(Sim/Não)");
+        String resposta =sc.nextLine();
+        if (resposta.equalsIgnoreCase("Sim")) {
+            System.out.println("Começando um novo jogo...");
+        }else{
+            if (resposta.equalsIgnoreCase("Não")) {
+                System.out.println("Tá bom...");
+            }else{
+                System.out.println("Opção inválida");
 
-        //System.out.print("Digite o nome do Personagem: ");
-       // String nome = sc.nextLine();
-
-        //System.out.print("Escolha a classe dele: ");
-        //String classe = sc.nextLine();
-
-        //System.out.print("Escolha a arma dele: ");
-        //String arma = sc.nextLine();
-
-        //System.out.print("Digite o tipo do usuário: ");
-        //String tipoUsuario = sc.nextLine();
-
-        //System.out.println("Jogador entrou!");
-
-        // Criando inventário vazio
-        //ArrayList<Item> inventario = new ArrayList<>();
-
-        // Criando personagem (ajuste conforme seu construtor real)
-        //Personagem personagem1 = new Personagem(nome,
-          //      tipoUsuario,
-            //    classe,
-              //  idPersonagem++,
-                //1,      // nível
-                //100,    // vida
-                //50,     // mana
-                //10,     // ataque
-                //5,      // defesa
-                //inventario
-       // );
-
-        //PERSONAGENS.add(personagem1);
-
-        //System.out.println("Jogador " + nome + " criado com sucesso!");
+            }
+        }
     }
 }
+
+
+
 
