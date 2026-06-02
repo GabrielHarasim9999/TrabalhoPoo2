@@ -148,6 +148,11 @@ public class Main {
 
                 case 14:
                     listarArmas();
+                    break;
+
+                case 15:
+                    cadastrarMissao();
+                    break;
 
                 default:
                     System.out.println("Opção inválida");
