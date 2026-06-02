@@ -10,7 +10,7 @@ public class Main {
     private static final List<Inimigo> INIMIGOS = new ArrayList<>();
     private static final List<Arma> ARMAS = new ArrayList<>();
     private static final List<Armadura> ARMADURAS = new ArrayList<>();
-    private static final List<Cidade>  CIDADES = new ArrayList<>();
+    private static final List<Cidade> CIDADES = new ArrayList<>();
     private static final List<Dragão> DRAGÃOS = new ArrayList<>();
     private static final List<Esqueleto> ESQUELETOS = new ArrayList<>();
     private static final List<Missao> MISSAOS = new ArrayList<>();
@@ -88,6 +88,9 @@ public class Main {
             System.out.println("9- Cadastrar dragão");
             System.out.println("10- Cadastrar esqueleto");
             System.out.println("11- Cadastrar poção");
+            System.out.println("12- Listar personagens");
+            System.out.println("13- Listar inimigos");
+            System.out.println("14- Listar armas");
 
 
             int escolha = Integer.parseInt(sc.nextLine());
@@ -135,6 +138,16 @@ public class Main {
                 case 11:
                     cadastrarPocao();
                     break;
+                case 12:
+                    listarPersonagens();
+                    break;
+
+                case 13:
+                    listarInimigos();
+                    break;
+
+                case 14:
+                    listarArmas();
 
                 default:
                     System.out.println("Opção inválida");
@@ -173,14 +186,15 @@ public class Main {
         int mana = Integer.parseInt(sc.nextLine());
 
         System.out.println("Digite o inventário do personagem:");
-        ArrayList inventario =  new ArrayList();
+        ArrayList inventario = new ArrayList();
 
 
         int idPersonagem = PERSONAGENS.size() + 1;
-        Personagem personagem = new Personagem(nome,tipoUsuario,classe,idPersonagem,nivel,vida,mana,ataque,defesa,inventario);
+        Personagem personagem = new Personagem(nome, tipoUsuario, classe, idPersonagem, nivel, vida, mana, ataque, defesa, inventario);
         PERSONAGENS.add(personagem);
         System.out.println("O personagem foi cadastrado: " + personagem.toString());
     }
+
     public static void cadastrarOTipoDeArma() {
         System.out.println("Digite o nome da arma:");
         String nome = sc.nextLine();
@@ -190,7 +204,7 @@ public class Main {
         int durabilidade = Integer.parseInt(sc.nextLine());
 
         int idArma = ARMAS.size() + 1;
-        Arma arma = new Arma(idArma,dano,nome,durabilidade);
+        Arma arma = new Arma(idArma, dano, nome, durabilidade);
         ARMAS.add(arma);
         System.out.println("A arma foi cadastrado: " + arma.toString());
     }
@@ -206,9 +220,10 @@ public class Main {
         String tipoArmadura = sc.nextLine();
 
         int idArmadura = ARMADURAS.size() + 1;
-        Armadura armadura= new Armadura(idArmadura,defesa,nomeArmadura,tipoArmadura, durabilidade);
+        Armadura armadura = new Armadura(idArmadura, defesa, nomeArmadura, tipoArmadura, durabilidade);
         ARMADURAS.add(armadura);
     }
+
     public static void cadastrarOTipoDeMissao() {
         System.out.println("Digite o título da missão");
         String titulo = sc.nextLine();
@@ -234,12 +249,12 @@ public class Main {
         String raridade = sc.nextLine();
 
         int idItem = ITEMS.size() + 1;
-        Item item = new Item(idItem,nome, tipo, valor, peso, raridade);
+        Item item = new Item(idItem, nome, tipo, valor, peso, raridade);
         ITEMS.add(item);
 
     }
 
-    public static void cadastrarTipoNPC(){
+    public static void cadastrarTipoNPC() {
         System.out.println("Digite o dialogo da npc:");
         String dialogo = sc.nextLine();
         System.out.println("Digite o nome do NPC");
@@ -272,50 +287,53 @@ public class Main {
         }
     }
 
-    public static void comecarNovoJogo(){
+    public static void comecarNovoJogo() {
         boolean comecar = true;
         System.out.println("Você deseja começar um novo jogo?(Sim/Não)");
-        String resposta =sc.nextLine();
+        String resposta = sc.nextLine();
         if (resposta.equalsIgnoreCase("Sim")) {
             System.out.println("Começando um novo jogo...");
-        }else{
+        } else {
             if (resposta.equalsIgnoreCase("Não")) {
                 System.out.println("Tá bom...");
-            }else{
+            } else {
                 System.out.println("Opção inválida");
 
             }
         }
     }
-    public static void carregarJogoSalvo(){
+
+    public static void carregarJogoSalvo() {
         boolean carregar = true;
         System.out.println("Você deseja carregar um jogo salvo?(Sim/Não");
-        String resposta =sc.nextLine();
+        String resposta = sc.nextLine();
         if (resposta.equalsIgnoreCase("Sim")) {
             System.out.println("Carregando um jogo salvo...");
-        }else{
-        if (resposta.equalsIgnoreCase("Não")) {
-            System.out.println("Tá bom...");
-        }else{
-            System.out.println("Opção inválida");
+        } else {
+            if (resposta.equalsIgnoreCase("Não")) {
+                System.out.println("Tá bom...");
+            } else {
+                System.out.println("Opção inválida");
             }
 
         }
 
     }
-    public static void salvarJogo(){
+
+    public static void salvarJogo() {
         boolean salvar = true;
         System.out.println("Você deseja salvar o jogo?(Sim/Não)");
-        String resposta =sc.nextLine();
+        String resposta = sc.nextLine();
         if (resposta.equalsIgnoreCase("Sim")) {
             System.out.println("Salvando o jogo...");
-        }else{
+        } else {
             if (resposta.equalsIgnoreCase("Não")) {
-            }else{
+            } else {
                 System.out.println("Opção inválida");
             }
         }
     }
+
     public static void cadastrarInimigo() {
 
         System.out.println("Digite o nome do inimigo:");
@@ -338,6 +356,7 @@ public class Main {
 
         System.out.println("O inimigo foi cadastrado: " + inimigo.toString());
     }
+
     public static void cadastrarCidade() {
 
         System.out.println("Digite o nome da cidade:");
@@ -357,6 +376,7 @@ public class Main {
 
         System.out.println("A cidade foi cadastrada: " + cidade.toString());
     }
+
     public static void cadastrarDragao() {
 
         System.out.println("Digite o nome do dragão:");
@@ -379,6 +399,7 @@ public class Main {
 
         System.out.println("O dragão foi cadastrado: " + dragao.toString());
     }
+
     public static void cadastrarEsqueleto() {
 
         System.out.println("Digite o nome do esqueleto:");
@@ -398,6 +419,7 @@ public class Main {
 
         System.out.println("O esqueleto foi cadastrado: " + esqueleto.toString());
     }
+
     public static void cadastrarMissao() {
 
         System.out.println("Digite o título da missão:");
@@ -420,6 +442,7 @@ public class Main {
 
         System.out.println("A missão foi cadastrada: " + missao.toString());
     }
+
     public static void cadastrarPocao() {
 
         System.out.println("Digite o nome da poção:");
@@ -439,8 +462,51 @@ public class Main {
 
         System.out.println("A poção foi cadastrada: " + pocao.toString());
     }
-}
 
+
+    public static void listarInimigos() {
+
+        if (INIMIGOS.isEmpty()) {
+            System.out.println("Nenhum inimigo cadastrado.");
+            return;
+        }
+
+        System.out.println("\n===== LISTA DE INIMIGOS =====");
+
+        for (Inimigo inimigo : INIMIGOS) {
+            System.out.println(inimigo);
+        }
+
+    }
+
+    public static void listarArmas() {
+
+        if (ARMAS.isEmpty()) {
+            System.out.println("Nenhuma arma cadastrada.");
+            return;
+        }
+
+        System.out.println("\n===== LISTA DE ARMAS =====");
+
+        for (Arma arma : ARMAS) {
+            System.out.println(arma);
+        }
+    }
+
+    public static void listarPersonagens() {
+
+        if (PERSONAGENS.isEmpty()) {
+            System.out.println("Nenhum personagem cadastrado.");
+            return;
+        }
+
+        System.out.println("\n===== LISTA DE PERSONAGENS =====");
+
+        for (Personagem personagem : PERSONAGENS) {
+            System.out.println(personagem);
+        }
+    }
+}
 
 
 
