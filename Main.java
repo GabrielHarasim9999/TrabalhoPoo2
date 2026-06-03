@@ -326,7 +326,7 @@ public class Main {
 
     public static void sairDoJogo() {
         boolean sair = true;
-        System.out.println("Você deseja sair do jogo?");
+        System.out.println("Você deseja sair do jogo?(Sim/Não)");
         String resposta = sc.nextLine();
         if (resposta.equalsIgnoreCase("Sim")) {
             System.out.println("Saindo do jogo...");
