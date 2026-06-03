@@ -5,13 +5,12 @@ public class Arma  extends Item{
     private int durabilidade;
 
     public Arma(String nome, int dano, int durabilidade){
-        this.nome = nome;
-        this.dano = dano;
-        this.durabilidade = durabilidade;
+        super(nome, dano, durabilidade);
+
     }
 
     public Arma(int idArma, int dano, String nome, int durabilidade) {
-        super();
+        super(idArma, String.valueOf(dano),nome, durabilidade);
     }
 
     public int getIdArma() {

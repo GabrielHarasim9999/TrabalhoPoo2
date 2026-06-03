@@ -6,7 +6,7 @@ public class Armadura extends Item{
     private String durabilidade;
 
     public Armadura(int defesa, int i, String nomeArmadura, String tipoArmadura, int durabilidade) {
-        super();
+        super(defesa, i , nomeArmadura, tipoArmadura, durabilidade);
     }
 
     public void reduzirDano(){

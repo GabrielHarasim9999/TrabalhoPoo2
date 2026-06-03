@@ -3,9 +3,6 @@ public class Pocao extends Item{
     private int valorEfeito;
     private int duracao;
 
-    public Pocao(int idItem, String nome, String tipo, int valor, int peso, String raridade) {
-        super(idItem, nome, tipo, valor, peso, raridade);
-    }
 
     public Pocao(int idPocao, String nome, String efeito, int valor) {
         super(idPocao, nome , efeito, valor );

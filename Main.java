@@ -34,7 +34,7 @@ public class Main {
             System.out.println("5- Sair do jogo");
             System.out.println("Escolha uma opcao: ");
 
-            int escolha = Integer.parseInt(sc.nextLine());
+            int escolha = Integer.parseInt(sc.nextLine().trim());
 
             switch (escolha) {
                 case 0:
@@ -94,6 +94,7 @@ public class Main {
 
 
             int escolha = Integer.parseInt(sc.nextLine());
+
             switch (escolha) {
                 case 1:
                     cadastrarOPersonagem();

@@ -13,6 +13,15 @@ public class Item {
     public Item(int idPocao, String nome, String efeito, int valor) {
     }
 
+    public Item(String nome, int dano, int durabilidade) {
+
+    }
+
+    public Item(int defesa, int i, String nomeArmadura, String tipoArmadura, int durabilidade) {
+
+    }
+
+
     public void usar(){
 
     }
