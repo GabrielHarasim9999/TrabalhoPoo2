@@ -58,10 +58,8 @@ public class Main {
                     break;
 
                 case 5:
-                    escolha = Integer.parseInt(sc.nextLine());
-                    System.out.println("Saindo do Jogo");
+                    sairDoJogo();
                     break;
-
                 default:
                     System.out.println("Comando não existe");
             }
@@ -93,7 +91,7 @@ public class Main {
             System.out.println("14- Listar armas");
 
 
-            int escolha = Integer.parseInt(sc.nextLine());
+            int escolha = Integer.parseInt(sc.nextLine().trim());
 
             switch (escolha) {
                 case 1:
@@ -326,6 +324,22 @@ public class Main {
 
     }
 
+    public static void sairDoJogo() {
+        boolean sair = true;
+        System.out.println("Você deseja sair do jogo?");
+        String resposta = sc.nextLine();
+        if (resposta.equalsIgnoreCase("Sim")) {
+            System.out.println("Saindo do jogo...");
+        }else{
+            if (resposta.equalsIgnoreCase("Não")) {
+                System.out.println("Tá bom");
+            }else{
+                System.out.println("Opção Inválida");
+
+            }
+        }
+    }
+
     public static void salvarJogo() {
         boolean salvar = true;
         System.out.println("Você deseja salvar o jogo?(Sim/Não)");
@@ -334,6 +348,7 @@ public class Main {
             System.out.println("Salvando o jogo...");
         } else {
             if (resposta.equalsIgnoreCase("Não")) {
+                System.out.println("Tá bom");
             } else {
                 System.out.println("Opção inválida");
             }
