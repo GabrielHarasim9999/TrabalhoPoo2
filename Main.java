@@ -59,7 +59,9 @@ public class Main {
 
                 case 5:
                     sairDoJogo();
+                    continuar = false;
                     break;
+
                 default:
                     System.out.println("Comando não existe");
             }
