@@ -2,9 +2,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Mapa {
+    public int idMapa;
     private String nomeRegiao;
-    private List<String> listaDeLocais = new ArrayList<>();
     public List<Inimigo> listarInimigos = new ArrayList<>();
+
+    public Mapa(String nomeRegiao,
+                List<Inimigo> listarInimigos) {
+
+        this.nomeRegiao = nomeRegiao;
+        this.listarInimigos = listarInimigos;
+    }
 
     public List<Inimigo> listarInimigos(){
         return List.of();
@@ -21,26 +28,16 @@ public class Mapa {
     public List<Inimigo> getListarInimigos() {
         return listarInimigos;
     }
-
-    public List<String> getListaDeLocais() {
-        return listaDeLocais;
-    }
-
     public String getNomeRegiao() {
         return nomeRegiao;
     }
-
-    public void setListaDeLocais(List<String> listaDeLocais) {
-        this.listaDeLocais = listaDeLocais;
-    }
-
     public void setListarInimigos(List<Inimigo> listarInimigos) {
         this.listarInimigos = listarInimigos;
     }
-
     public void setNomeRegiao(String nomeRegiao) {
         this.nomeRegiao = nomeRegiao;
     }
+
 
 }
 

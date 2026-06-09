@@ -7,6 +7,7 @@ public class Main {
 
     private static final Scanner sc = new Scanner(System.in);
     private static final List<Personagem> PERSONAGENS = new ArrayList<>();
+    private static final List<Mapa> MAPAS= new ArrayList<>();
     private static final List<Inimigo> INIMIGOS = new ArrayList<>();
     private static final List<Arma> ARMAS = new ArrayList<>();
     private static final List<Armadura> ARMADURAS = new ArrayList<>();
@@ -91,6 +92,9 @@ public class Main {
             System.out.println("12- Listar personagens");
             System.out.println("13- Listar inimigos");
             System.out.println("14- Listar armas");
+            System.out.println("15- Cadastrar Missão");
+            System.out.println("16- Cadastrar Mapa");
+            System.out.println("17- Carregar dados Iniciais:");
 
 
             int escolha = Integer.parseInt(sc.nextLine().trim());
@@ -155,6 +159,13 @@ public class Main {
                     cadastrarMissao();
                     break;
 
+                case 16:
+                    cadastrarMapa();
+                    break;
+
+                case 17:
+                    carregarDadosIniciais();
+
                 default:
                     System.out.println("Opção inválida");
 
@@ -164,6 +175,7 @@ public class Main {
         }
 
     }
+
 
     public static void cadastrarOPersonagem() {
 
@@ -199,6 +211,13 @@ public class Main {
         Personagem personagem = new Personagem(nome, tipoUsuario, classe, idPersonagem, nivel, vida, mana, ataque, defesa, inventario);
         PERSONAGENS.add(personagem);
         System.out.println("O personagem foi cadastrado: " + personagem.toString());
+    }
+
+    public static void cadastrarMapa(){
+        System.out.println("Digite o nome do mapa:");
+        String nome = sc.nextLine();
+        int idMapa =MAPAS.size() + 1;
+        Mapa mapa = new Mapa(nome,INIMIGOS);
     }
 
     public static void cadastrarOTipoDeArma() {
@@ -529,7 +548,68 @@ public class Main {
             System.out.println(personagem);
         }
     }
+    private static void carregarDadosIniciais() {
+
+        // Armas
+        ARMAS.add(new Arma(1, 25, "Espada de Ferro", 100));
+        ARMAS.add(new Arma(2, 40, "Machado de Guerra", 80));
+        ARMAS.add(new Arma(3, 15, "Arco Curto", 120));
+
+        // Armaduras
+        ARMADURAS.add(new Armadura(1, 15, "Armadura de Couro", "Leve", 100));
+        ARMADURAS.add(new Armadura(2, 30, "Armadura de Aço", "Pesada", 150));
+
+        // NPCs
+        NPCS.add(new NPC(1, "Bem-vindo à cidade!", "Carlos", "Mercador"));
+        NPCS.add(new NPC(2, "Preciso de ajuda para uma missão.", "Merlin", "Mago"));
+
+        // Inimigos
+        INIMIGOS.add(new Inimigo(1, "Goblin", 2, 50));
+        INIMIGOS.add(new Inimigo(2, "Orc", 5, 120));
+
+        // Cidades
+        CIDADES.add(new Cidade(1, "Valedoria", "Reino do Norte", 5000));
+        CIDADES.add(new Cidade(2, "Pedraviva", "Reino do Sul", 3000));
+
+        // Dragões
+        DRAGÃOS.add(new Dragão(1, "Fafnir", "Fogo", 500, 80));
+        DRAGÃOS.add(new Dragão(2, "Glacius", "Gelo", 450, 70));
+
+        // Personagens
+        List<Item> inventario = new ArrayList<>();
+
+        PERSONAGENS.add(
+                new Personagem(
+                        "Arthur",
+                        "Jogador",
+                        "Guerreiro",
+                        1,
+                        10,
+                        200,
+                        50,
+                        35,
+                        20,
+                        inventario
+                )
+        );
+
+        PERSONAGENS.add(
+                new Personagem(
+                        "Luna",
+                        "Jogador",
+                        "Maga",
+                        2,
+                        8,
+                        120,
+                        200,
+                        45,
+                        10,
+                        inventario
+                )
+        );
+    }
 }
+
 
 
 
