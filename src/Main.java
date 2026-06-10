@@ -7,7 +7,7 @@ public class Main {
 
     private static final Scanner sc = new Scanner(System.in);
     private static final List<Personagem> PERSONAGENS = new ArrayList<>();
-    private static final List<Mapa> MAPAS= new ArrayList<>();
+    private static final List<Mapa> MAPAS = new ArrayList<>();
     private static final List<Inimigo> INIMIGOS = new ArrayList<>();
     private static final List<Arma> ARMAS = new ArrayList<>();
     private static final List<Armadura> ARMADURAS = new ArrayList<>();
@@ -303,19 +303,19 @@ public class Main {
 
     }
 
-        public static void Continuar() {
+    public static void Continuar() {
 
-            System.out.println("Você quer continuar o jogo? (Sim/Não)");
-            String resposta = sc.nextLine();
+        System.out.println("Você quer continuar o jogo? (Sim/Não)");
+        String resposta = sc.nextLine();
 
-            if (resposta.equalsIgnoreCase("sim")) {
-                System.out.println("Continuando o jogo...");
-            } else if (resposta.equalsIgnoreCase("não")) {
-                System.out.println("Saindo...");
-            } else {
-                System.out.println("Resposta inválida");
-            }
+        if (resposta.equalsIgnoreCase("sim")) {
+            System.out.println("Continuando o jogo...");
+        } else if (resposta.equalsIgnoreCase("não")) {
+            System.out.println("Saindo...");
+        } else {
+            System.out.println("Resposta inválida");
         }
+    }
 
 
     public static void comecarNovoJogo() {
@@ -357,10 +357,10 @@ public class Main {
         String resposta = sc.nextLine();
         if (resposta.equalsIgnoreCase("Sim")) {
             System.out.println("Saindo do jogo...");
-        }else{
+        } else {
             if (resposta.equalsIgnoreCase("Não")) {
                 System.out.println("Tá bom");
-            }else{
+            } else {
                 System.out.println("Opção Inválida");
 
             }
@@ -554,6 +554,7 @@ public class Main {
             System.out.println(personagem);
         }
     }
+
     private static void carregarDadosIniciais() {
 
         // Armas
