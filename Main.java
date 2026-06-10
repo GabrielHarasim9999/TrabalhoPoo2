@@ -33,6 +33,7 @@ public class Main {
             System.out.println("3- Carregar jogo salvo");
             System.out.println("4- Salvar jogo");
             System.out.println("5- Sair do jogo");
+            System.out.println("6- Voltar");
             System.out.println("Escolha uma opcao: ");
 
             int escolha = Integer.parseInt(sc.nextLine().trim());
@@ -60,6 +61,10 @@ public class Main {
 
                 case 5:
                     sairDoJogo();
+                    continuar = false;
+                    break;
+
+                case 6:
                     continuar = false;
                     break;
 
@@ -213,11 +218,16 @@ public class Main {
         System.out.println("O personagem foi cadastrado: " + personagem.toString());
     }
 
-    public static void cadastrarMapa(){
+    public static void cadastrarMapa() {
+
         System.out.println("Digite o nome do mapa:");
         String nome = sc.nextLine();
-        int idMapa =MAPAS.size() + 1;
-        Mapa mapa = new Mapa(nome,INIMIGOS);
+
+        Mapa mapa = new Mapa(nome, INIMIGOS);
+
+        MAPAS.add(mapa);
+
+        System.out.println("Mapa cadastrado com sucesso!");
     }
 
     public static void cadastrarOTipoDeArma() {
@@ -293,24 +303,20 @@ public class Main {
 
     }
 
-    public static void Continuar() {
-        boolean continuar = true;
-        while (continuar) {
-            System.out.println("\n----------------");
+        public static void Continuar() {
+
             System.out.println("Você quer continuar o jogo? (Sim/Não)");
             String resposta = sc.nextLine();
 
             if (resposta.equalsIgnoreCase("sim")) {
-                System.out.println("Continuando o jogo de onde parou");
+                System.out.println("Continuando o jogo...");
+            } else if (resposta.equalsIgnoreCase("não")) {
+                System.out.println("Saindo...");
             } else {
-                if (resposta.equalsIgnoreCase("não")) {
-                    System.out.println("Saindo do jogo");
-                } else {
-                    System.out.println("Resposta inválida");
-                }
+                System.out.println("Resposta inválida");
             }
         }
-    }
+
 
     public static void comecarNovoJogo() {
         boolean comecar = true;
@@ -589,7 +595,7 @@ public class Main {
                         50,
                         35,
                         20,
-                        inventario
+                        (ArrayList) inventario
                 )
         );
 
@@ -604,7 +610,7 @@ public class Main {
                         200,
                         45,
                         10,
-                        inventario
+                        (ArrayList) inventario
                 )
         );
     }
