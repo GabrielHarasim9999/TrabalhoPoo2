@@ -93,13 +93,21 @@ public class Main {
             System.out.println("8- Cadastrar cidade");
             System.out.println("9- Cadastrar dragão");
             System.out.println("10- Cadastrar esqueleto");
-            System.out.println("11- Cadastrar poção");
             System.out.println("12- Listar personagens");
             System.out.println("13- Listar inimigos");
             System.out.println("14- Listar armas");
-            System.out.println("15- Cadastrar Missão");
-            System.out.println("16- Cadastrar Mapa");
-            System.out.println("17- Carregar dados Iniciais:");
+            System.out.println("15- Cadastrar missão");
+            System.out.println("16- Cadastrar mapa");
+            System.out.println("17- Listar cidades");
+            System.out.println("18- Listar dragões");
+            System.out.println("19- Listar esqueletos");
+            System.out.println("20- Listar missões");
+            System.out.println("21- Listar NPCs");
+            System.out.println("22- Listar itens");
+            System.out.println("23- Listar poções");
+            System.out.println("24- Listar armaduras");
+            System.out.println("25- Jogar");
+            System.out.println("0- Voltar");
 
 
             int escolha = Integer.parseInt(sc.nextLine().trim());
@@ -168,8 +176,44 @@ public class Main {
                     cadastrarMapa();
                     break;
 
+                case 0:
+                    continuar = false;
+                    break;
+
                 case 17:
-                    carregarDadosIniciais();
+                    listarCidades();
+                    break;
+
+                case 18:
+                    listarDragoes();
+                    break;
+
+                case 19:
+                    listarEsqueletos();
+                    break;
+
+                case 20:
+                    listarMissoes();
+                    break;
+
+                case 21:
+                    listarNPCs();
+                    break;
+
+                case 22:
+                    listarItens();
+                    break;
+
+                case 23:
+                    listarPocoes();
+                    break;
+
+                case 24:
+                    listarArmaduras();
+                    break;
+                case 25:
+                    jogar();
+                    break;
 
                 default:
                     System.out.println("Opção inválida");
@@ -179,7 +223,253 @@ public class Main {
 
         }
 
+
     }
+    public static void jogar() {
+
+        if (PERSONAGENS.isEmpty()) {
+            System.out.println("Cadastre um personagem primeiro.");
+            return;
+        }
+
+        System.out.println("Escolha um personagem:");
+
+        for (Personagem personagem : PERSONAGENS) {
+            System.out.println(
+                    personagem.getIdPersonagem() +
+                            " - " +
+                            personagem.getNome()
+            );
+        }
+
+        int id = Integer.parseInt(sc.nextLine());
+
+        Personagem escolhido = null;
+
+        for (Personagem personagem : PERSONAGENS) {
+            if (personagem.getIdPersonagem() == id) {
+                escolhido = personagem;
+                break;
+            }
+        }
+
+        if (escolhido == null) {
+            System.out.println("Personagem não encontrado.");
+            return;
+        }
+
+        menuJogador(escolhido);
+    }
+    public static void menuJogador(Personagem personagem) {
+
+        boolean jogando = true;
+
+        while (jogando) {
+
+            System.out.println("\n===== JOGANDO =====");
+            System.out.println("Personagem: " + personagem.getNome());
+            System.out.println("1 - Treinar");
+            System.out.println("2 - Descansar");
+            System.out.println("3 - Ver status");
+            System.out.println("4 - Aceitar missão");
+            System.out.println("5 - Explorar mapa");
+            System.out.println("6 - Enfrentar inimigo");
+            System.out.println("7 - Equipar arma");
+            System.out.println("8 - Equipar armadura");
+            System.out.println("9 - Tomar poção");
+            System.out.println("0 - Sair");
+
+            int opcao = Integer.parseInt(sc.nextLine());
+
+            switch (opcao) {
+
+                case 1:
+                    personagem.setNivel(personagem.getNivel() + 1);
+                    personagem.setAtaque(personagem.getAtaque() + 5);
+
+                    System.out.println(
+                            personagem.getNome() +
+                                    " treinou e subiu de nível!"
+                    );
+                    break;
+
+                case 2:
+                    personagem.setVida(
+                            personagem.getVida() + 20
+                    );
+
+                    System.out.println(
+                            personagem.getNome() +
+                                    " descansou e recuperou vida."
+                    );
+                    break;
+
+                case 3:
+                    System.out.println(personagem);
+                    break;
+
+                case 4:
+                    listarMissoes();
+                    break;
+
+                case 5:
+                    listarMapas();
+                    break;
+
+                case 6:
+
+                    if (INIMIGOS.isEmpty()) {
+                        System.out.println("Não existem inimigos.");
+                        break;
+                    }
+
+                    Inimigo inimigo = INIMIGOS.get(0);
+
+                    System.out.println(
+                            personagem.getNome() +
+                                    " derrotou " +
+                                    inimigo.getNome()
+                    );
+
+                    personagem.setNivel(
+                            personagem.getNivel() + 1
+                    );
+
+                    break;
+
+                case 7:
+                    equiparArma(personagem);
+                    break;
+
+                case 8:
+                    equiparArmadura(personagem);
+                    break;
+
+                case 9:
+                    tomarPocao(personagem);
+                    break;
+
+                case 0:
+                    jogando = false;
+                    break;
+
+                default:
+                    System.out.println("Opção inválida.");
+            }
+        }
+    }
+    public static void equiparArma(Personagem personagem) {
+
+        if (ARMAS.isEmpty()) {
+            System.out.println("Nenhuma arma cadastrada.");
+            return;
+        }
+
+        System.out.println("===== ARMAS DISPONÍVEIS =====");
+
+        for (Arma arma : ARMAS) {
+            System.out.println(
+                    arma.getIdArma() + " - " +
+                            arma.getNome()
+            );
+        }
+
+        System.out.println("Digite o ID da arma:");
+        int id = Integer.parseInt(sc.nextLine());
+
+        for (Arma arma : ARMAS) {
+
+            if (arma.getIdArma() == id) {
+
+                personagem.setArmaEquipada(arma);
+
+                System.out.println(
+                        personagem.getNome() +
+                                " equipou a arma " +
+                                arma.getNome()
+                );
+
+                return;
+            }
+        }
+
+        System.out.println("Arma não encontrada.");
+    }
+    public static void equiparArmadura(Personagem personagem) {
+
+        if (ARMADURAS.isEmpty()) {
+            System.out.println("Nenhuma armadura cadastrada.");
+            return;
+        }
+
+        System.out.println("===== ARMADURAS DISPONÍVEIS =====");
+
+        for (Armadura armadura : ARMADURAS) {
+            System.out.println(
+                    armadura.getIdArmadura() + " - " +
+                            armadura.getNomeArmadura()
+            );
+        }
+
+        System.out.println("Digite o ID da armadura:");
+        int id = Integer.parseInt(sc.nextLine());
+
+        for (Armadura armadura : ARMADURAS) {
+
+            if (armadura.getIdArmadura() == id) {
+
+                personagem.setArmaduraEquipada(armadura);
+
+                System.out.println(
+                        personagem.getNome() +
+                                " equipou a armadura " +
+                                armadura.getNomeArmadura()
+                );
+
+                return;
+            }
+        }
+
+        System.out.println("Armadura não encontrada.");
+    }public static void tomarPocao(Personagem personagem) {
+
+        if (POCS.isEmpty()) {
+            System.out.println("Nenhuma poção cadastrada.");
+            return;
+        }
+
+        System.out.println("===== POÇÕES DISPONÍVEIS =====");
+
+        for (Pocao pocao : POCS) {
+            System.out.println(
+                    pocao.getIdPocao() + " - " +
+                            pocao.getNome()
+            );
+        }
+
+        System.out.println("Digite o ID da poção:");
+        int id = Integer.parseInt(sc.nextLine());
+
+        for (Pocao pocao : POCS) {
+
+            if (pocao.getIdPocao() == id) {
+
+                personagem.setVida(
+                        personagem.getVida() + 50
+                );
+
+                System.out.println(
+                        personagem.getNome() +
+                                " recuperou 50 pontos de vida."
+                );
+
+                return;
+            }
+        }
+
+        System.out.println("Poção não encontrada.");
+    }
+
 
 
     public static void cadastrarOPersonagem() {
@@ -554,6 +844,131 @@ public class Main {
             System.out.println(personagem);
         }
     }
+    public static void listarMapas() {
+
+        if (MAPAS.isEmpty()) {
+            System.out.println("Nenhum mapa cadastrado.");
+            return;
+        }
+
+        System.out.println("\n===== LISTA DE MAPAS =====");
+
+        for (Mapa mapa : MAPAS) {
+            System.out.println(mapa);
+        }
+    }
+
+    public static void listarCidades() {
+
+        if (CIDADES.isEmpty()) {
+            System.out.println("Nenhuma cidade cadastrada.");
+            return;
+        }
+
+        System.out.println("\n===== LISTA DE CIDADES =====");
+
+        for (Cidade cidade : CIDADES) {
+            System.out.println(cidade);
+        }
+    }
+
+    public static void listarDragoes() {
+
+        if (DRAGÃOS.isEmpty()) {
+            System.out.println("Nenhum dragão cadastrado.");
+            return;
+        }
+
+        System.out.println("\n===== LISTA DE DRAGÕES =====");
+
+        for (Dragão dragao : DRAGÃOS) {
+            System.out.println(dragao);
+        }
+    }
+
+    public static void listarEsqueletos() {
+
+        if (ESQUELETOS.isEmpty()) {
+            System.out.println("Nenhum esqueleto cadastrado.");
+            return;
+        }
+
+        System.out.println("\n===== LISTA DE ESQUELETOS =====");
+
+        for (Esqueleto esqueleto : ESQUELETOS) {
+            System.out.println(esqueleto);
+        }
+    }
+
+    public static void listarMissoes() {
+
+        if (MISSAOS.isEmpty()) {
+            System.out.println("Nenhuma missão cadastrada.");
+            return;
+        }
+
+        System.out.println("\n===== LISTA DE MISSÕES =====");
+
+        for (Missao missao : MISSAOS) {
+            System.out.println(missao);
+        }
+    }
+
+    public static void listarNPCs() {
+
+        if (NPCS.isEmpty()) {
+            System.out.println("Nenhum NPC cadastrado.");
+            return;
+        }
+
+        System.out.println("\n===== LISTA DE NPCs =====");
+
+        for (NPC npc : NPCS) {
+            System.out.println(npc);
+        }
+    }
+
+    public static void listarItens() {
+
+        if (ITEMS.isEmpty()) {
+            System.out.println("Nenhum item cadastrado.");
+            return;
+        }
+
+        System.out.println("\n===== LISTA DE ITENS =====");
+
+        for (Item item : ITEMS) {
+            System.out.println(item);
+        }
+    }
+
+    public static void listarPocoes() {
+
+        if (POCS.isEmpty()) {
+            System.out.println("Nenhuma poção cadastrada.");
+            return;
+        }
+
+        System.out.println("\n===== LISTA DE POÇÕES =====");
+
+        for (Pocao pocao : POCS) {
+            System.out.println(pocao);
+        }
+    }
+
+    public static void listarArmaduras() {
+
+        if (ARMADURAS.isEmpty()) {
+            System.out.println("Nenhuma armadura cadastrada.");
+            return;
+        }
+
+        System.out.println("\n===== LISTA DE ARMADURAS =====");
+
+        for (Armadura armadura : ARMADURAS) {
+            System.out.println(armadura);
+        }
+    }
 
     private static void carregarDadosIniciais() {
 
@@ -612,6 +1027,73 @@ public class Main {
                         45,
                         10,
                         (ArrayList) inventario
+                )
+        );
+        // Esqueletos
+        ESQUELETOS.add(new Esqueleto(1, "Esqueleto Guerreiro", 80, 15));
+        ESQUELETOS.add(new Esqueleto(2, "Esqueleto Arqueiro", 60, 20));
+
+// Itens
+        ITEMS.add(new Item(1, "Anel da Força", "Acessório", 500, 1, "Raro"));
+        ITEMS.add(new Item(2, "Pedra Mágica", "Material", 300, 2, "Incomum"));
+        ITEMS.add(new Item(3, "Pergaminho Antigo", "Consumível", 200, 1, "Comum"));
+
+// Poções
+        POCS.add(new Pocao(1, "Poção de Vida", "Recupera 50 de vida", 100));
+        POCS.add(new Pocao(2, "Poção de Mana", "Recupera 50 de mana", 120));
+        POCS.add(new Pocao(3, "Poção de Força", "Aumenta o ataque temporariamente", 200));
+
+// Missões
+        MISSAOS.add(new Missao(
+                1,
+                "Ameaça Goblin",
+                "Elimine os goblins próximos da cidade.",
+                "100 moedas de ouro",
+                "Disponível"
+        ));
+
+        MISSAOS.add(new Missao(
+                2,
+                "Caçada ao Dragão",
+                "Derrote o dragão Fafnir.",
+                "Espada Lendária",
+                "Disponível"
+        ));
+
+        MISSAOS.add(new Missao(
+                3,
+                "Escolta Real",
+                "Proteja a caravana do reino.",
+                "500 moedas de ouro",
+                "Disponível"
+        ));
+        PERSONAGENS.add(
+                new Personagem(
+                        "Thoran",
+                        "Jogador",
+                        "Guerreiro",
+                        3,
+                        15,
+                        300,
+                        40,
+                        50,
+                        35,
+                        new ArrayList<>()
+                )
+        );
+
+        PERSONAGENS.add(
+                new Personagem(
+                        "Elandra",
+                        "Jogador",
+                        "Arqueira",
+                        4,
+                        12,
+                        180,
+                        80,
+                        45,
+                        15,
+                        new ArrayList<>()
                 )
         );
     }

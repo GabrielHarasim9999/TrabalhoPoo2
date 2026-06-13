@@ -129,4 +129,12 @@ public class Personagem {
         this.vida = vida;
     }
 
+    public int getIdPersonagem() { return id; }
+
+    public void setArmaEquipada(Arma arma) {
+    }
+
+    public void setArmaduraEquipada(Armadura armadura) {
+    }
 }
+

@@ -1,4 +1,6 @@
 public class Pocao extends Item{
+    private int idPocao;
+    private String nomePocao;
     private String tipoEfeito;
     private int valorEfeito;
     private int duracao;
@@ -101,5 +103,13 @@ public class Pocao extends Item{
 
     public void setValorEfeito(int valorEfeito) {
         this.valorEfeito = valorEfeito;
+    }
+
+    public int getIdPocao() {
+        return idPocao;
+    }
+
+    public String getNomePocao() {
+        return nomePocao;
     }
 }
